@@ -38,7 +38,7 @@ app.use(session({
 connectDB()
 
 app.use(express.json())
-// app.use(urlencoded({ extended: true }))
+app.use(urlencoded({ extended: true }))
 
 //Routes
 // app.get('/api/', (req, res) => res.send('Hello World!'))
