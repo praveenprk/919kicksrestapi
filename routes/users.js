@@ -1,16 +1,13 @@
 const express = require("express")
 const { registerUser, loginUser, updatePhone, deleteUser } = require("../controllers/usersController")
 
-/* 
-Move this snippet to controllers/usersController.js:
+
 const { connectDB } = require("../database/dbconnect")
-const UsersModel = require('../models/Users.js') */
+const UsersModel = require('../models/Users.js')
 
 // const {createUserDoc, getUsersAgeDetails} = require('../models/Users')
 
 const user = express.Router()
-
-express.json()
 
 //get All users
 user.get("/all", async (req, res) => {

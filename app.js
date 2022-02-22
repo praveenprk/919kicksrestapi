@@ -1,5 +1,11 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
+app.use(cors(
+    {
+        origin: 'http://localhost:3000',
+        credentials: false
+    }))
 const { join } = require('path')
 const user = require('./routes/users.js')
 const product = require('./routes/products')
@@ -31,8 +37,8 @@ app.use(session({
 
 connectDB()
 
-
-app.use(urlencoded({ extended: true }))
+app.use(express.json())
+// app.use(urlencoded({ extended: true }))
 
 //Routes
 // app.get('/api/', (req, res) => res.send('Hello World!'))

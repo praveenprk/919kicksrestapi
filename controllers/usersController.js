@@ -53,7 +53,7 @@ exports.loginUser = async (req, res) => {
         const search = await UsersModel.findOne({email: email})
         if(search) {
             const isMatch = await bcrypt.compare(password, search.password)
-            if(search.email == email && isMatch) {
+            if(isMatch) {
             res.json({
                 status: true,
                 message: "User found"
@@ -69,7 +69,7 @@ exports.loginUser = async (req, res) => {
     } else {
             res.json({
             status: false,
-            message: "Not a registered user"
+            message: 'not found'
         })
     }
 
