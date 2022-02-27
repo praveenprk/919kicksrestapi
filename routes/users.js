@@ -22,7 +22,7 @@ user.get("/all", async (req, res) => {
 //get users by email
 user.get('/view/:email', async (req, res) => {
     try {
-        const results = await UsersModel.findOne({ email: req.params.email })
+        const results = await UsersModel.findOne({ email: req.params.email }, { password: 0, __v: 0})
         res.json(results)
     } catch (error) {
         res.json(error)

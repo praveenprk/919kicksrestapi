@@ -55,6 +55,11 @@ app.use(urlencoded({ extended: true }))
 // app.use(middleWare.searchVendors)
 
 //Route level Middleware
+
+app.get('/', (req, res) => {
+    res.send('checking index')
+})
+
 app.use('/findme', middleWare.searchOrders, (req, res) => {
     res.send('Searching orders...1')
 })

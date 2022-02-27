@@ -101,5 +101,5 @@ exports.deleteUser = async (req, res) => {
         }
     } catch (error) {
         res.json(error)
-    }
+     }
 }
