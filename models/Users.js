@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-//Define Schema
+//Define Users Schema
 
 const usersSchema = new mongoose.Schema({
     name: {

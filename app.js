@@ -89,4 +89,4 @@ app.use('/cookie', cRouter)
 //Session Router
 app.use('/session', sessionRoute)
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Store REST API listening on port ${port}!`))

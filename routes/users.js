@@ -1,12 +1,11 @@
 const express = require("express")
 const { registerUser, loginUser, updatePhone, deleteUser } = require("../controllers/usersController")
 
-
 const { connectDB } = require("../database/dbconnect")
 const UsersModel = require('../models/Users.js')
 
 // const {createUserDoc, getUsersAgeDetails} = require('../models/Users')
-
+ 
 const user = express.Router()
 
 //get All users
@@ -30,6 +29,7 @@ user.get('/view/:email', async (req, res) => {
 })
 
 //Create user and save to database
+
 user.post("/create", registerUser)
 
 //login user

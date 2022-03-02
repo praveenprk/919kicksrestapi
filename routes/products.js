@@ -1,7 +1,10 @@
 const express = require('express')
 const product = express.Router()
+const { connectDB } = require("../database/dbconnect")
+const ProductModel = require('../models/Products.js')
 
-product.get('/all', (req, res) => {
+
+product.get('/all', async (req, res) => {
     res.send('All Products')
 })
 
