@@ -1,16 +1,14 @@
 const express = require('express')
+const { viewAllProducts, createProduct, viewProduct } = require('../controllers/productsController')
 const product = express.Router()
 const { connectDB } = require("../database/dbconnect")
-const ProductModel = require('../models/Products.js')
 
 
-product.get('/all', async (req, res) => {
-    res.send('All Products')
-})
+product.get('/all', viewAllProducts)
 
-product.post('/create', (req, res) => {
-    res.send('Create Product')
-})
+product.post('/create', createProduct)
+
+product.get('/viewProduct/:id', viewProduct)
 
 product.put('/update', (req, res) => {
     res.send('Update Product')

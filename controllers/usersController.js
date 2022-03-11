@@ -10,10 +10,10 @@ const bcrypt = require('bcrypt')
 
 exports.registerUser = async (req, res) => {
     try {
-        const { name, email, password, age, houseno, street, city, district, zipcode, state, phone } = req.body
+        const { fname, lname, email, password, age, houseno, street, city, district, zipcode, state, phone } = req.body
         const hashedPassword = await bcrypt.hash(password, 10)
         const user = new UsersModel({
-            name: name,
+            name: fname + " " + lname,
             email: email,
             password: hashedPassword,
             age: age,

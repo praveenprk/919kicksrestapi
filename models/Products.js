@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: true,
-        trim: true
+        trim: false
     },
     description: {
         type: String,
@@ -40,13 +40,10 @@ const productSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
-        required: true,
         trim: true
     },
     reviews: {
-        type: String,
-        required: true,
-        trim: true
+        type: Array,
     },
     date: {
         type: Date,

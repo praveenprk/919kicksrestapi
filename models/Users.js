@@ -24,40 +24,39 @@ const usersSchema = new mongoose.Schema({
     },
     age: {
         type: Number,
-        default: 18
+        // required: true
     },
     address:
             [{
                 houseno: {
                     type: String,
-                    required: true
+                    // required: true
                 },
                 street: {
                     type: String,
-                    required: true
+                    // required: true
                 },
                 city: {
                     type: String,
-                    required: true
+                    // required: true
                 },
                 district: {
                     type: String,
-                    required: true
+                    // required: true
                 },
                 zipcode: {
                     type: String,
-                    required: true,
+                    // required: true,
                     trim: true
                 },
                 state: {
                     type: String,
-                    required: true
+                    // required: true
                 }
             }],
 
     phone: {
         type: String,
-        required: false,
         trim: true,
         validate: {
             validator: function(v) {
